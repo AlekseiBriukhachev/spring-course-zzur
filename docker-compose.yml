@@ -4,10 +4,10 @@ services:
   world_x:
     image: mysql
     environment:
-      MYSQL_DATABASE: 'world_x'
+      MYSQL_DATABASE: 'mysql_db'
       MYSQL_USER: bcuser
       MYSQL_PASSWORD: Password02
-      MYSQL_ROOT_PASSWORD: testsuperpass
+      MYSQL_ROOT_PASSWORD: Password02
     ports:
       - "3306:3306"
     expose:

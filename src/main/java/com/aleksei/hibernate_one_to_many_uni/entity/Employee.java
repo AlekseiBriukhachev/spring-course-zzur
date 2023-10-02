@@ -1,6 +1,9 @@
-package com.aleksei.hibernate_test.entity;
+package com.aleksei.hibernate_one_to_many_uni.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -19,15 +22,12 @@ public class Employee {
     private String name;
     @Column(name = "surname")
     private String surname;
-    @Column(name = "department")
-    private String department;
     @Column(name = "salary")
     private int salary;
 
-    public Employee(String name, String surname, String department, int salary) {
+    public Employee(String name, String surname, int salary) {
         this.name = name;
         this.surname = surname;
-        this.department = department;
         this.salary = salary;
     }
 }

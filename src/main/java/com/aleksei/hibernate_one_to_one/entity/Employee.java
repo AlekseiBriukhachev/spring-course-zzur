@@ -1,6 +1,9 @@
-package com.aleksei.hibernate_test.entity;
+package com.aleksei.hibernate_one_to_one.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -23,6 +26,10 @@ public class Employee {
     private String department;
     @Column(name = "salary")
     private int salary;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "details_id")
+    @ToString.Exclude
+    private Details employeeDetails;
 
     public Employee(String name, String surname, String department, int salary) {
         this.name = name;
