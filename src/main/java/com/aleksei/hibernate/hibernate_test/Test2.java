@@ -1,6 +1,6 @@
-package com.aleksei.hibernate_test;
+package com.aleksei.hibernate.hibernate_test;
 
-import com.aleksei.hibernate_test.entity.Employee;
+import com.aleksei.hibernate.hibernate_test.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

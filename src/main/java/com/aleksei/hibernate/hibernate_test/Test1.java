@@ -1,13 +1,11 @@
-package com.aleksei.hibernate_test;
+package com.aleksei.hibernate.hibernate_test;
 
-import com.aleksei.hibernate_test.entity.Employee;
+import com.aleksei.hibernate.hibernate_test.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.List;
-
-public class Test3 {
+public class Test1 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
@@ -16,22 +14,15 @@ public class Test3 {
 
         try {
             Session session = factory.getCurrentSession();
+
+            Employee employee = new Employee("Aleks", "Ivanoff",
+                    "IT", 600);
             session.beginTransaction();
-
-//            List<Employee> employees = session.createQuery("from Employee")
-//                            .getResultList();
-            List<Employee> employees = session.createQuery("from Employee " +
-                            "where name='Aleks'")
-                    .getResultList();
-
-
-            for (Employee e : employees) {
-                System.out.println(e);
-            }
-
+            session.save(employee);
             session.getTransaction().commit();
 
             System.out.println("Done!");
+            System.out.println(employee);
         } finally {
             factory.close();
         }

@@ -1,7 +1,7 @@
-package com.aleksei.hibernate_one_to_many_uni;
+package com.aleksei.hibernate.hibernate_one_to_many_uni;
 
-import com.aleksei.hibernate_one_to_many_uni.entity.Department;
-import com.aleksei.hibernate_one_to_many_uni.entity.Employee;
+import com.aleksei.hibernate.hibernate_one_to_many_uni.entity.Department;
+import com.aleksei.hibernate.hibernate_one_to_many_uni.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

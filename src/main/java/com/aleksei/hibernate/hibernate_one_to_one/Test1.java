@@ -1,32 +1,30 @@
-package com.aleksei.hibernate_test;
+package com.aleksei.hibernate.hibernate_one_to_one;
 
-import com.aleksei.hibernate_test.entity.Employee;
+import com.aleksei.hibernate.hibernate_one_to_one.entity.Details;
+import com.aleksei.hibernate.hibernate_one_to_one.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.List;
-
-public class Test4 {
+public class Test1 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Details.class)
                 .buildSessionFactory();
 
+        Session session = factory.getCurrentSession();
         try {
-            Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-//            Employee employee = session.get(Employee.class, 1);
-//            employee.setSalary(1500);
-
-            session.createQuery("update Employee set salary=1000 " +
-                    "where name='Aleks'").executeUpdate();
+            Employee employee = session.get(Employee.class, 9);
+            session.delete(employee);
             session.getTransaction().commit();
 
             System.out.println("Done!");
         } finally {
+            session.close();
             factory.close();
         }
     }

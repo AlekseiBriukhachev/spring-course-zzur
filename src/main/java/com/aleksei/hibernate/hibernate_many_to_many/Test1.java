@@ -1,7 +1,7 @@
-package com.aleksei.hibernate_many_to_many;
+package com.aleksei.hibernate.hibernate_many_to_many;
 
-import com.aleksei.hibernate_many_to_many.entity.Child;
-import com.aleksei.hibernate_many_to_many.entity.Section;
+import com.aleksei.hibernate.hibernate_many_to_many.entity.Child;
+import com.aleksei.hibernate.hibernate_many_to_many.entity.Section;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

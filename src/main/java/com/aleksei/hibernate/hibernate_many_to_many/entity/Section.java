@@ -1,4 +1,4 @@
-package com.aleksei.hibernate_many_to_many.entity;
+package com.aleksei.hibernate.hibernate_many_to_many.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
