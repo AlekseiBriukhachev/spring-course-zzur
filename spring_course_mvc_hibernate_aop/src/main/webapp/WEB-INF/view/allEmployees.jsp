@@ -14,14 +14,21 @@
             <th>Surname</th>
             <th>Department</th>
             <th>Salary</th>
+            <th>Operations</th>
         </tr>
         <%--@elvariable id="allEmployees" type="java.util.List"--%>
         <c:forEach var="emp" items="${allEmployees}">
+            <c:url var="updateButton" value="/updateInfo">
+                <c:param name="employeeId" value="${emp.id}"/>
+            </c:url>
             <tr>
                 <td>${emp.name}</td>
                 <td>${emp.surname}</td>
                 <td>${emp.department}</td>
                 <td>${emp.salary}</td>
+                <td>
+                    <input type="button" value="Update" onclick="window.location.href='${updateButton}'"/>
+                </td>
             </tr>
         </c:forEach>
     </table>
