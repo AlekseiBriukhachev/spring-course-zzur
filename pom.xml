@@ -12,12 +12,21 @@
     <modules>
         <module>spring_course_mvc</module>
       <module>spring_course_aop_hibernate</module>
+        <module>spring_course_mvc_hibernate_aop</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>17</jdk.version>
         <spring.version>5.3.28</spring.version>
+        <jstl.version>1.2</jstl.version>
+        <hibernate.version>6.2.5.Final</hibernate.version>
+        <hibernate.annotation.version>5.1.2.Final</hibernate.annotation.version>
+        <mysql.version>8.1.0</mysql.version>
+        <lombok.version>1.18.28</lombok.version>
+        <servlet.version>2.5</servlet.version>
+        <aspect.version>1.7.0</aspect.version>
+        <annotation.version>1.3.2</annotation.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>

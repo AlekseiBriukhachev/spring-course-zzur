@@ -6,3 +6,8 @@ CREATE TABLE employees (
     salary int,
     PRIMARY KEY (id)
 );
+INSERT INTO mysql_db.employees (name, surname, department, salary)
+VALUES
+    ('Aleksei', 'Briukhachev', 'IT', 700),
+    ('Oleg', 'Ivanov', 'Sales', 500),
+    ('Viktor', 'Sidorov', 'HR', 850);
