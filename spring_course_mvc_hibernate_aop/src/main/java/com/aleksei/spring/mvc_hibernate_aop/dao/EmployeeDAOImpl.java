@@ -24,12 +24,22 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public void saveEmployee(Employee employee) {
 
-        sessionFactory.getCurrentSession().saveOrUpdate(employee);
+        sessionFactory.getCurrentSession()
+                .saveOrUpdate(employee);
     }
 
     @Override
     public Employee getEmployee(int id) {
 
-        return sessionFactory.getCurrentSession().get(Employee.class, id);
+        return sessionFactory.getCurrentSession()
+                .get(Employee.class, id);
+    }
+
+    @Override
+    public void deleteEmployee(int id) {
+        sessionFactory.getCurrentSession()
+                .createQuery("DELETE FROM Employee WHERE id=:emloyeeId")
+                .setParameter("emloyeeId", id)
+                .executeUpdate();
     }
 }
