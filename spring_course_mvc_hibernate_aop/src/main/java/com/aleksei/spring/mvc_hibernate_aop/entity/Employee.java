@@ -1,4 +1,4 @@
-package com.aleksei.hibernate.hibernate_one_to_many_bi.entity;
+package com.aleksei.spring.mvc_hibernate_aop.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,16 +22,8 @@ public class Employee {
     private String name;
     @Column(name = "surname")
     private String surname;
+    @Column(name = "department")
+    private String department;
     @Column(name = "salary")
     private int salary;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "department_id")
-    @ToString.Exclude
-    private Department department;
-
-    public Employee(String name, String surname, int salary) {
-        this.name = name;
-        this.surname = surname;
-        this.salary = salary;
-    }
 }

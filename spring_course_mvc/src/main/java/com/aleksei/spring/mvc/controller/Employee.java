@@ -12,7 +12,7 @@ public class Employee {
     @Size(min = 2, message = "Name must be minimum 2 symbols")
     private String name;
 //    @NotEmpty(message = "surname is required field")
-    @NotBlank(message = "surname is required field")
+//    @NotBlank(message = "surname is required field")
     private String surname;
     @Min(message = "must be greater than 499", value = 500)
     @Max(message = "must be less than 1001", value = 1000)

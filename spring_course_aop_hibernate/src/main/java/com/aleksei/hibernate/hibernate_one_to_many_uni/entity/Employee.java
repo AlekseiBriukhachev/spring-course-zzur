@@ -1,10 +1,11 @@
 package com.aleksei.hibernate.hibernate_one_to_many_uni.entity;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import javax.persistence.*;
 
 
 @Entity
