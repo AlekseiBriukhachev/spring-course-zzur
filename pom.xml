@@ -15,12 +15,14 @@
         <module>spring_course_mvc_hibernate_aop</module>
         <module>spring-course-rest</module>
         <module>spring-course-rest-client</module>
+        <module>spring-course-security</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>17</jdk.version>
         <spring.version>5.3.28</spring.version>
+        <spring.security.version>5.8.4</spring.security.version>
         <jstl.version>1.2</jstl.version>
         <hibernate.version>5.6.15.Final</hibernate.version>
         <hibernate.annotation.version>5.1.2.Final</hibernate.annotation.version>
