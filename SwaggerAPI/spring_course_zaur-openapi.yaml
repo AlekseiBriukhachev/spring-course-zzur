@@ -1,0 +1,169 @@
+openapi: "3.0.3"
+info:
+  title: "spring_course_zaur API"
+  description: "spring_course_zaur API"
+  version: "1.0.0"
+servers:
+  - url: "http://localhost:8080"
+paths:
+  #  /api/employees:
+  /employees:
+    get:
+      summary: "GET api/employees"
+      operationId: "showAllEmployees"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Employee"
+    post:
+      summary: "POST api/employees"
+      operationId: "addNewEmployee"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                name:
+                  type: "string"
+                surname:
+                  type: "string"
+                department:
+                  type: "string"
+                salary:
+                  type: "integer"
+                  format: "int32"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Employee"
+  #    put:
+  #      summary: "PUT api/employees"
+  #      operationId: "updateEmployee"
+  #      requestBody:
+  #        content:
+  #          application/json:
+  #            schema:
+  #              $ref: '#/components/schemas/Employee'
+  #        required: true
+  #      responses:
+  #        "200":
+  #          description: "OK"
+  #          content:
+  #            '*/*':
+  #              schema:
+  #                $ref: "#/components/schemas/Employee"
+  #  /api/employees/{id}:
+  /employees/{id}:
+    get:
+      summary: "GET api/employees/{id}"
+      operationId: "showEmployee"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Employee"
+    delete:
+      summary: "DELETE api/employees/{id}"
+      operationId: "deleteEmployee"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+    put:
+      summary: "PUT api/employees/{id}"
+      operationId: "updateEmployee"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int32"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                name:
+                  type: "string"
+                surname:
+                  type: "string"
+                department:
+                  type: "string"
+                salary:
+                  type: "integer"
+                  format: "int32"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Employee"
+  /api/employees/name/{name}:
+    get:
+      summary: "GET api/employees/{name}"
+      operationId: "getAllEmployeesByName"
+      parameters:
+        - name: "name"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Employee"
+components:
+  schemas:
+    Employee:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+          format: "int32"
+        name:
+          type: "string"
+        surname:
+          type: "string"
+        department:
+          type: "string"
+        salary:
+          type: "integer"
+          format: "int32"
